@@ -1,0 +1,66 @@
+** npm i -D parcel(command). What is "-D" in this?
+installing package as Dev dependencies.
+
+** What is difference between dev dependencies and dependencies?
+Dev dependencies are the dependencies only in the development phase. where as dependecies are the dependencies after the production release. Here parcel bundler is a 
+dependency for us only in the development phase.
+
+** What is bundler?
+It helps our code to be production ready.
+
+** What is npm?
+It manages the packages but it is not termed as node package manager.
+
+** What does caret(^) or tilde(~) meant in package.json?
+caret(^) is put to update minor version upgrades of the package by default.
+tilde(~) is put to update major version upgrades of the package by default.
+Note: It is preferred to use caret(^) because if there is any major update, the app starts breaking.
+
+** What is package.json?
+It is a configuration for npm. It keeps the track of packages and its versions.
+
+** What is package-lock.json?
+It keeps logs of every version update and exact version of that package or dependency installed.
+
+** What is integrity in package-lock.json?
+It is a hash. It is used to verify if the version deployed on production and version on the local machine is same.
+
+** What are node_modules?
+It fetches the code of package installed from the npm and put it in a separate folder. It is database of the dependencies.
+
+** What are the other files apart from the package installed in node_modules folder?
+Those are all the dependencies of that package. And those dependencies further have their own dependencies. So, when we do npm i package, everything is installed.
+These are called as Transitive dependencies.
+
+** Why should node_modules not go inside git?
+Size of node_modules is huge and it is not necessary to put in git as it just has the code for packages and its dependencies. All the packages with their version
+logs are already there in package and package-lock.json. So, once you do "npm i" the exact versions of the packages will be installed on any environment.
+
+** What all should not be put in git?
+Whatever you think can be regenarated, those are not expected to be put on git.
+
+** What is npx?
+When we want to execute a package, we use npx
+
+** What does parcel do? and what does npx parcel index.html do?
+Parcel is a bundler. In "npx parcel index.html", index.html is source. with the command parcel goes to the source file and build a development build for our app
+and it host that development build on the localhost server. It also does HMR(Hot Module Replacement) - whenever we save our file the changes are imported into 
+server right away. Parcel does this by using File Watcher Algorithm which is written in C++. Parcel gives you faster builds because it uses caching. 
+Parcel also does Image Optimization. Parcel does minification of file at production build. It also does bundling. Parcel also compresses your file.
+Parcel also does consistent hashing. Parcel does code splitting. Parcel does differential bundling(When we host an application. It should work on all browsers
+and all versions of browser). Parcel does diagnostics. Parcel does Error Handling. Parcel also helps us to host on HTTPs server. Parcel uses Tree shaking algorithm(
+If we have multiple functions in our files and we use only 4-5 functions of them, if will remove unused code)
+
+** Why is installing react package better than pasting cdn links to import react in our app?
+Importing react from cdn links is a costly operation as it calls some server unpkg and also if we import react from cdn links, it has version attached to it.
+If there is any version upgrade of react we have to change the link again. So, it is better to install react package instead of importing react from cdn links.
+
+** What is type="module" while importing App.js to index.html?
+type = "module" says its not normal browser script and it is considered as module.
+
+** What is use of mentioning browswerslist in package.json?
+By default our app is compatible to run on all browsers. We put browserslist just to tell on what browsers our app should always work. If we put "last 2 versions" that
+means app works on all browsers for last 2 versions.
+
+** What is dist and .parcel-cache folders?
+dist basically has minification code which is done by parcel. .parcel-cache contains all build versions.
