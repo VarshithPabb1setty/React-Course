@@ -64,3 +64,49 @@ means app works on all browsers for last 2 versions.
 
 ** What is dist and .parcel-cache folders?
 dist basically has minification code which is done by parcel. .parcel-cache contains all build versions.
+
+** How do we create elements using React?
+using React.createElement. This actually creates a javascript object. Then a root is created using ReactDOM and we use that root to render React elements as HTML 
+elements.
+
+** Is there any other way to create React elements?
+Yes, to minimize the work of creating React elements, facebook developers have created JSX.
+
+** What is JSX?
+JSX is a convention where it merges HTML and JS together. It's not HTML or XML or HTML inside JS, It is HTML-like or XML-like syntax.
+
+** Does browser understands the code "const jsxHeading = <h1 id = "heading">"React Course Beginner🐣"</h1>;"?
+No, usually JavaScript is written in ECMAScript. So, browser understands only ECMAScript. But here our code is working because the code is transpiled into ECMAScript
+before getting rendered. This transpilation is done by parcel indirectly.
+
+** What is meant by parcel doing the transpilation indirectly?
+Parcel is not doing transpilation by itself, instead it is managing a package called Babel to do the job.
+
+** What is babel and what does it do?
+Babel is a JS transpiler or compiler. It actually converts JSX code to code which browser understands.
+
+** How do we prove JSX is not HTML?
+In HTML, if we want define class the syntax is class = "class name". In JSX it is className = "class name". We use camelcase to define attributes for a tag in JSX. 
+Eg: In HTML if we give as tabindex, In JSX it is tabIndex.
+
+** Can we write a JSX code in multiple lines?
+Yes, but it should be put inside parantheses. To let babel know where JSX code is starting and ending.
+
+** What are React Functional Components?
+React functional components are just javascript functions which are returning JSX. Components are declared with first letter capital. Eg: HeadingComponent.
+
+** How do you render React Component?
+wrap the react component for rendering. Eg: root.render(<Heading Component/>)
+
+** What is Component Composition?
+Putting one component into another is known as component composition.
+
+** How can we write javascript code in jsx?
+We can write javascript code in jsx by putting flower parantheses. Eg: {number}
+
+** How does jsx prevents from cross side scriptings?
+If some malicious data is coming from API, JSX will not blindly parse it. It will sanitize the data first and then it parses. This is how it prevents from cross side
+scripting.
+
+** Note: Both <TitleComponent /> and <TitleComponent></TitleComponent> and {TitleComponent()} are same.
+

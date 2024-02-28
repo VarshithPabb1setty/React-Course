@@ -1,51 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// Single Elements
-const heading = React.createElement(
-  "h1",
-  { id: "heading", xyz: "a" },
-  "Hello World from React!"
+// React Element
+const heading = (
+  <h1 id="heading" tabIndex="5">
+    "React Course Beginner🐣"
+  </h1>
 );
 
-// Nested Elements
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement(
-    "div",
-    { id: "child" },
-    React.createElement("h1", { id: "parent" }, "I am h1 tag!")
-  )
+const number = 1000;
+const elem = <span>React....React....React!!!</span>;
+
+const TitleComponent = () => (
+  <h1 className="head" tabIndex="5">
+    {elem}
+    Namaste Varshith!
+  </h1>
 );
 
-// Nested Elements with siblings
-const parent1 = React.createElement(
-  "div",
-  { id: "parent1" },
-  React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", { id: "parent1" }, "I am h1 tag!"),
-    React.createElement("h2", { id: "parent1" }, "I am h2 tag!"),
-  ])
+// React Component
+const HeadingComponent = () => (
+  <div id="container">
+    <h2>{number}</h2>
+    <TitleComponent/>
+    {TitleComponent()}
+    <h1 id="heading">React Course Beginner Functional Component🦁</h1>
+  </div>
 );
-
-//Nested Elements with multiple child
-const parent2 = React.createElement("div", { id: "parent2" }, [
-  React.createElement(
-    "div",
-    { id: "child2" },
-    React.createElement("h1", {}, "I'm nested h1 element with multiple child")
-  ),
-  React.createElement(
-    "div",
-    { id: "child3" },
-    React.createElement("h2", {}, "I'm nested h2 element with multiple child")
-  ),
-]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading);
-root.render(parent);
-root.render(parent1);
-root.render(parent2);
+root.render(<HeadingComponent/>);
