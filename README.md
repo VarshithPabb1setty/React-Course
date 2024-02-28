@@ -1,8 +1,8 @@
 Packages install command
-# npm i
+> npm i
 
 Dev Build Command
-# npx parcel index.html
+> npx parcel index.html
 
 Prod Build Command
-# npx parcel build index.html
+> npx parcel build index.html
