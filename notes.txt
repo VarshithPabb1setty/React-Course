@@ -124,3 +124,37 @@ If data gets updated time to time and to ignore rendering existing items again a
 which ones are new.
 Note: Don't use index as a key(Mentioned in official documentation) as if the data gets changing and new data is added at the front or middle then re-rendering should
 happen, else there will be data loss.
+
+
+
+
+
+Episode 5:
+
+How many types of exports are there?
+Two types: 1. Default export and other one is named export.
+
+Default Export/Import:
+export default <name of variable or Component>
+import <name of variable or Component> from <filepath>
+
+Named Export/Import
+export let/const variable/Component;
+import {resList} from '../utils/mockData'
+
+What are react hooks?
+It is a normal JS function which give us some utility functions. We use useState() and useEffect() mostly
+
+When do we use useState?
+We create state variables when we have to update the variables on any event. So, when the variable gets updated re-rendering of that component will happen. 
+
+What is Reconciliation Algorithm? Why do react use it?
+Is also called as React Fiber. It is introduced in React16. React fiber is new way to find the difference in DOM and updated the DOM. First React will create
+virtualDOM(An Object which is representation of actual DOM) for any create Element. So, when any event is performed Diff Algorithm gets executed and it checks
+difference between present virtualDOM and previous virtualDOM.
+
+Eg: If restaurant container has 7 cards first and this is one virtualDOM. when Top Rated Restaurant button is clicked then it compares the previous virtualDOM which
+is an object to object which is created on event(filtered list of cards). Then it updates to actual DOM.
+
+Why is react fast?
+Because it does effiecient DOM manipulation. React can efficiently find out the difference between virtualDOM's and updates the UI.
