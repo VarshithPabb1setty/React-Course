@@ -110,3 +110,17 @@ scripting.
 
 ** Note: Both <TitleComponent /> and <TitleComponent></TitleComponent> and {TitleComponent()} are same.
 
+
+Episode 4:
+
+How do you give inline css in jsx?
+We have to create a javascript object having key-value pair and use that object in style tag.
+
+What is Config driven UI?
+Data displayed on UI is changed on the basis of config data sent from backend.
+
+Why should we give a key to map items?
+If data gets updated time to time and to ignore rendering existing items again and again we use key. By this key react knows which components are already present and 
+which ones are new.
+Note: Don't use index as a key(Mentioned in official documentation) as if the data gets changing and new data is added at the front or middle then re-rendering should
+happen, else there will be data loss.
