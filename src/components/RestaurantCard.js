@@ -1,4 +1,4 @@
-import {CDN_URL} from "../utils/constants";
+import { CDN_URL } from "../utils/constants";
 const styleCard = {
   backgroundColor: "#f0f0f0",
 };
@@ -21,7 +21,7 @@ const RestaurantCard = (props) => {
       <h6>{cuisines.join(", ")}</h6>
       <h6>{costForTwo}</h6>
       <h6>{avgRating} stars</h6>
-      <h6>{sla.deliveryTime} min</h6>
+      <h6>{sla?.deliveryTime} min</h6>
     </div>
   );
 };
